@@ -1,0 +1,3 @@
+[submodule "DMRNG"]
+	path = DMRNG
+	url = git@github.com:sarrowsmith/DMRNG.git
