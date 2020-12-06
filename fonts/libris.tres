@@ -1,0 +1,5 @@
+[gd_resource type="DynamicFontData" format=2]
+
+[resource]
+resource_name = "Libris"
+font_path = "res://fonts/LibrisADFStd-Regular.otf"
