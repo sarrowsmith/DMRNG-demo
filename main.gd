@@ -37,4 +37,7 @@ func create_manager(path, file_name):
 
 
 func _on_ControlPanel_generate(source):
-	print(rng_managers[source].GetName())
+	var names = {}
+	while len(names) < 12:
+		names[rng_managers[source].GetName()] = true
+	control_panel.set_names(names.keys())
