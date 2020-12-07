@@ -2,13 +2,15 @@ extends Node2D
 
 
 export(String, DIR) var data_dir
-
-
 var RNGManager = load("res://RNGManager.cs")
 var rng_managers = {}
 
+onready var control_panel = get_node("ControlPanel")
+
+
 func _ready():
 	find_sources(data_dir)
+	control_panel.add_sources(rng_managers.keys())
 
 
 func find_sources(path):
@@ -17,7 +19,7 @@ func find_sources(path):
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			if not dir.current_is_dir():
+			if file_name.ends_with(".txt"):
 				create_manager(path, file_name)
 			file_name = dir.get_next()
 	else:
@@ -32,3 +34,7 @@ func create_manager(path, file_name):
 	var manager = RNGManager.new()
 	rng_managers[name] = manager
 	manager.Load(content)
+
+
+func _on_ControlPanel_generate(source):
+	print(rng_managers[source].GetName())

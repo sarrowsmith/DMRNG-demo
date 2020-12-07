@@ -7,4 +7,5 @@
 script = ExtResource( 1 )
 data_dir = "res://DMRNG/data"
 
-[node name="Panel" parent="." instance=ExtResource( 3 )]
+[node name="ControlPanel" parent="." instance=ExtResource( 3 )]
+[connection signal="generate" from="ControlPanel" to="." method="_on_ControlPanel_generate"]
