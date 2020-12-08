@@ -6,11 +6,12 @@ var RNGManager = load("res://RNGManager.cs")
 var rng_managers = {}
 
 onready var control_panel = get_node("ControlPanel")
+onready var input_panel = get_node("PopupPanel")
 
 
 func _ready():
 	find_sources(data_dir)
-	control_panel.add_sources(rng_managers.keys())
+	control_panel.set_sources(rng_managers.keys())
 
 
 func find_sources(path):
@@ -41,3 +42,7 @@ func _on_ControlPanel_generate(source):
 	while len(names) < 12:
 		names[rng_managers[source].GetName()] = true
 	control_panel.set_names(names.keys())
+
+
+func _on_ControlPanel_add_source():
+	input_panel.popup()

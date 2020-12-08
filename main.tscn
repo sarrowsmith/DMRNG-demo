@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://InputPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ControlPanel.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node2D"]
@@ -8,4 +9,21 @@ script = ExtResource( 1 )
 data_dir = "res://DMRNG/data"
 
 [node name="ControlPanel" parent="." instance=ExtResource( 3 )]
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.498039 )
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 704.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputPanel" parent="PopupPanel" instance=ExtResource( 2 )]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 684.0
+margin_bottom = 460.0
+[connection signal="add_source" from="ControlPanel" to="." method="_on_ControlPanel_add_source"]
 [connection signal="generate" from="ControlPanel" to="." method="_on_ControlPanel_generate"]

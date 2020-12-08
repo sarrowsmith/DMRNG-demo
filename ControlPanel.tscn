@@ -16,11 +16,9 @@ outline_color = Color( 0, 0, 0, 0.501961 )
 font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 18
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 18
 font_data = ExtResource( 2 )
 
 [node name="ControlPanel" type="Panel"]

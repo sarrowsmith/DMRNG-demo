@@ -1,5 +1,7 @@
-[gd_resource type="DynamicFontData" format=2]
+[gd_resource type="DynamicFont" format=2]
 
 [resource]
-resource_name = "Libris"
-font_path = "res://fonts/LibrisADFStd-Regular.otf"
+size = 18
+extra_spacing_top = 4
+extra_spacing_bottom = 4
+font_data = null
