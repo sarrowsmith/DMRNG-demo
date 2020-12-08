@@ -61,6 +61,9 @@ margin_left = 192.0
 margin_top = 32.0
 margin_right = 640.0
 margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextEdit" type="TextEdit" parent="."]
 margin_left = 32.0
@@ -75,4 +78,6 @@ margin_right = 656.0
 margin_bottom = 112.0
 custom_fonts/font = SubResource( 3 )
 text = "Done"
-[connection signal="pressed" from="Done" to="." method="_on_Button_pressed"]
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]

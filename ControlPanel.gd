@@ -13,6 +13,7 @@ func _ready():
 
 
 func set_sources(sources):
+	options.clear()
 	options.add_item("-- select source --")
 	options.add_separator()
 	for source in sources:
@@ -35,3 +36,8 @@ func _on_Button_pressed():
 			emit_signal("add_source")
 		else:
 			emit_signal("generate", options.get_item_text(options.selected))
+
+
+func _on_OptionButton_item_selected(index):
+	if index == options.get_item_count() - 1:
+		emit_signal("add_source")

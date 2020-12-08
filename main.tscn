@@ -27,3 +27,4 @@ margin_right = 684.0
 margin_bottom = 460.0
 [connection signal="add_source" from="ControlPanel" to="." method="_on_ControlPanel_add_source"]
 [connection signal="generate" from="ControlPanel" to="." method="_on_ControlPanel_generate"]
+[connection signal="new_source" from="PopupPanel/InputPanel" to="." method="_on_InputPanel_new_source"]

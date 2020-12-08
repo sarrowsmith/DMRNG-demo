@@ -31,9 +31,13 @@ func create_manager(path, file_name):
 	var file = File.new()
 	file.open(path+"/"+file_name, File.READ)
 	var content = file.get_as_text()
-	var name = file_name.get_basename().capitalize()
+	var description = file_name.get_basename().capitalize()
+	add_manager(description, content)
+
+
+func add_manager(description, content):
 	var manager = RNGManager.new()
-	rng_managers[name] = manager
+	rng_managers[description] = manager
 	manager.Load(content)
 
 
@@ -46,3 +50,9 @@ func _on_ControlPanel_generate(source):
 
 func _on_ControlPanel_add_source():
 	input_panel.popup()
+
+
+func _on_InputPanel_new_source(description, source):
+	add_manager(description, source)
+	control_panel.set_sources(rng_managers.keys())
+	_on_ControlPanel_generate(description)
