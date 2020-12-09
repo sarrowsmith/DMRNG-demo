@@ -21,8 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="DMRNG"
-config/description="A simple Pong game. This demo shows best practices
-for game development in Godot, including signals."
+config/description="A demonstration of the DragonMail Random Name Generator"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
